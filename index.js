@@ -8,7 +8,6 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
-  .get('/times', (req, res) => res.send(countHitsuji()))
   .get('/db', async (req, res) => {
     try {
       const client = await pool.connect()
@@ -23,16 +22,7 @@ express()
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-
-  countHitsuji = () => {
-    let result = ''
-    const times = process.env.TIMES || 5
-    for (i = 0; i < times; i++) {
-      result += i + ' '
-    }
-    return result;
-  }
-
+  //環境変数より、接続文字列を取得
   const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: { rejectUnauthorized: false }
