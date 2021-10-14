@@ -6,7 +6,7 @@ express()
   .use(express.static('public'))
   .set('views', require('path').join(__dirname, 'views'))
   .set('view engine', 'ejs')
-  .get('/', (req, res) => {
+  .get('/test', (req, res) => {
     const client = pool.connect()
       .then(() => { console.log("Connected successfuly"); })
       .catch(() => { console.log("Error"); })
