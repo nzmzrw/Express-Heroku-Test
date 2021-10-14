@@ -7,11 +7,11 @@ const td_e = '</td>';
 //検索ボタン
 function Search()
 {
-    MainTable();
+    MainTable("(*>△<)");
 }
 
 //動的リスト生成
-function MainTable()
+function MainTable(text)
 {
     var t_text = "";
 
@@ -20,15 +20,15 @@ function MainTable()
     t_text += tr_s;
     
     t_text += td_s;
-    t_text += "test";
+    t_text += text;
     t_text += td_e;
     t_text += td_s;
-    t_text += "test";
+    t_text += text;
     t_text += td_e;
     t_text += td_s;
-    t_text += "test";
+    t_text += text;
+    t_text += td_e;
     
-    t_text += td_e;
     t_text += tr_e;
     }
 
