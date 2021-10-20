@@ -20,5 +20,5 @@ function readTopPage(req, res, next) {
   const client = pool.connect()
     .then(() => { console.log("Connected successfuly"); })
     .catch(() => { console.log("Error"); })
-  res.render("pages/index.ejs");
+  res.render("pages/main.ejs");
 }
