@@ -5,7 +5,7 @@ const { Pool } = require('pg');
 express()
   .set('views', require('path').join(__dirname, 'views'))
   .set('view engine', 'ejs')
-  .get('/test', readTopPage)
+  .get('', readTopPage)
 
   .listen(PORT, () => console.log(`Listening on ${PORT}`))
 
@@ -14,11 +14,29 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false }
 });
+pool.connect()
+  .then(console.log("Client disconnected successfully"));
+
 
 //TOP画面読み込み
-function readTopPage(req, res, next) {
-  const client = pool.connect()
-    .then(() => { console.log("Connected successfuly"); })
-    .catch(() => { console.log("Error"); })
-  res.render("pages/main.ejs");
-}
+async function readTopPage(req, res, next) {
+  try {
+
+    //DB接続
+    // await pool.connect()
+  
+    //テーブル取得
+    const result = await pool.query('select * from ramen')
+    console.table(result.rows)
+
+    //取得したデータで、テーブルを生成
+    let items = [];
+    items = result.rows;
+
+    res.render("pages/main.ejs", {
+      items: items,
+    });
+  }
+  catch (ex) {
+    console.log(`Something wrong happend ${ex}`)
+  }}
