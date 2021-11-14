@@ -5,8 +5,8 @@ const { Pool } = require('pg');
 express()
   .set('views', require('path').join(__dirname, 'views'))
   .set('view engine', 'ejs')
+  .use(express.static('public'))
   .get('', readTopPage)
-
   .listen(PORT, () => console.log(`Listening on ${PORT}`))
 
 //環境変数より、接続文字列を取得
@@ -17,14 +17,9 @@ const pool = new Pool({
 pool.connect()
   .then(console.log("Client disconnected successfully"));
 
-
 //TOP画面読み込み
 async function readTopPage(req, res, next) {
   try {
-
-    //DB接続
-    // await pool.connect()
-  
     //テーブル取得
     const result = await pool.query('select * from ramen')
     console.table(result.rows)
@@ -39,4 +34,5 @@ async function readTopPage(req, res, next) {
   }
   catch (ex) {
     console.log(`Something wrong happend ${ex}`)
-  }}
+  }
+}

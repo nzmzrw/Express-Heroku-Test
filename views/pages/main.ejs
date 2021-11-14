@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html>
-
 <head lang="ja">
   <style type="text/css">
     table.t_main {
       margin: auto;
       table-layout: fixed;
-      width: 80%;
+      width: 50%;
     }
-
-    table.t_search {
+    table.t_sub {
       margin: auto;
       table-layout: fixed;
     }
-
     input.i_search {
       resize: none;
       height: 20px;
@@ -21,18 +18,21 @@
   </style>
   <script>
     function Search() {
-      var input = document.getElementById("inputText").value;
-      var rowElement = document.getElementById("mainTable").rows;
-      for (let cnt = 0; cnt < rowElement.length; cnt++) {
-        if (!rowElement[cnt].id.includes(input)) {
-          rowElement[cnt].style.display = "none";
-        }
-        else {
-          rowElement[cnt].style.display = "";
-        }
-      }
-    }
 
+        var test = window.location.pathname;
+      alert(test);
+
+      // var input = document.getElementById("inputText").value;
+      // var rowElement = document.getElementById("mainTable").rows;
+      // for (let cnt = 0; cnt < rowElement.length; cnt++) {
+      //   if (!rowElement[cnt].id.includes(input)) {
+      //     rowElement[cnt].style.display = "none";
+      //   }
+      //   else {
+      //     rowElement[cnt].style.display = "";
+      //   }
+      // }
+    }
     function Reset() {
       var rowElement = document.getElementById("mainTable").rows;
       for (let cnt = 0; cnt < rowElement.length; cnt++) {
@@ -49,7 +49,10 @@
 <body>
   <header style="background :rgb(179, 179, 179);">TestTitle</header>
 
-  <table class="t_search" style="background: greenyellow;">
+  <table class="t_sub" style="background: greenyellow;">
+    <tr>
+      <td style="width: 100px;"><label>掲載店舗数<%= items.length %></label></td>
+    </tr>
     <tr>
       <td style="width: 100px;"><label id="test_label">駅名検索</label></td>
       <td style="width: 300px;"><input type="text" id="inputText" class="i_search"></input></td>
@@ -60,38 +63,19 @@
 
   <% const tr_s1='<tr id="'%>
   <% const tr_s2='"/>'%>
-  <% const tr_e='</tr>'%>
-  <% const td_s='<td>'%>
-  <% const td_e='</td>'%>
 
-  <table class="t_main" border="1" id="mainTable">
+  <table class="t_main" border="0" id="mainTable">
     <tbody id="s_result">
-      <% for(let i=0; i < items.length; i++) { %>
-      <%- tr_s1 + items[i].station + tr_s2 %>
-      <%- td_s %>
-      <a href="https://twitter.com/trysail_staff">
-        <%= items[i].id %>
-      </a>
-      <%- td_e %>
-      <%- td_s %>
-      <a href="https://twitter.com/trysail_staff">
-        <%= items[i].name %>
-      </a>
-      <%- td_e %>
-      <%- td_s %>
-      <a href="https://twitter.com/trysail_staff">
-        <%= items[i].station %>
-      </a>
-      <%- td_e %>
-      <%- td_s %>
-      <a href="https://twitter.com/trysail_staff">
-        <%= items[i].date %>
-      </a>
-      <%- td_e %>
-      <%- tr_e %>
+      <% for(let i=0; i < items.length; i++) { %><%- tr_s1 + items[i].station + tr_s2 %>
+      <td>
+        <image src="./image/4dtEpDB__400x400.jpeg" alt="海の写真" title="空と海">
+        <a href="https://twitter.com/trysail_staff">
+          <b><%= items[i].name + ' ' + items[i].station + items[i].date %></b>
+        </a>
+      </td>
+      </tr>
       <% } %>
     </tbody>
   </table>
 </body>
-
 </html>
