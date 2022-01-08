@@ -19,6 +19,10 @@
       height: 20px;
     }
 
+    /* b.storename {
+      color: red;
+    } */
+
     /* The Modal (background) */
     .modal {
       display: none;
@@ -182,13 +186,18 @@
     </tr>
   </table>
 
+  <!-- Table items -->
   <% const tr_s1='<tr id="'%>
   <% const tr_s2='"/>'%>
   <table class="t_main" border="0" id="mainTable">
     <tbody id="s_result">
       <% for(let i=0; i < items.length; i++) { %><%- tr_s1 + items[i].station + tr_s2 %>
+      <td style="width: 100px;">
+          <image src="./image/4dtEpDB__400x400.jpeg" width="100%"></image>
+      </td>
       <td>
-          <b><%= items[i].name + ' ' + items[i].station + items[i].date %></b>
+        <div><%= items[i].name %> - <%= items[i].station %></div>
+        <div>掲載日 <%= items[i].date %></div>
       </td>
       </tr>
       <% } %>
@@ -197,7 +206,6 @@
 
   <!-- The Modal -->
   <div id="myModal" class="modal">
-
     <!-- Modal content -->
     <div class="modal-content">
       <div class="modal-body">
