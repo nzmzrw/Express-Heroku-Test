@@ -160,14 +160,16 @@
       }
     }
     function Dialog(e) {
-      var attr = e.getAttribute("id").split(",");
-      if(attr.length != 2) 
-      {
+      var selItem = e.getAttribute("id").split(",");
+      if (selItem.length != 3) {
         alert("Selected Item Error.");
       }
 
       var title = document.getElementById('dialogTitle')
-      title.innerHTML = attr[0] + " - " + attr[1];
+      title.innerHTML = selItem[0] + " - " + selItem[1];
+
+      var link = document.getElementById('tabelogLink')
+      link.innerHTML = "<a href=\"https://tabelog.com/" + selItem[2] + "\" target=\"_blank\">食べログで閲覧</a>"
 
       modal.style.display = "block";
     }
@@ -198,7 +200,7 @@
   <% const tr_s2='"/>'%>
   <table class="t_main" border="0" id="mainTable">
     <tbody id="s_result">
-      <% for(let i=0; i < items.length; i++) { %><%- tr_s1 + items[i].name + "," + items[i].station + tr_s2 %>
+      <% for(let i=0; i < items.length; i++) { %><%- tr_s1 + items[i].name + "," + items[i].station + "," + items[i].tabelog + tr_s2 %>
       <td style="width: 100px;">
         <image src="./image/4dtEpDB__400x400.jpeg" width="100%"></image>
       </td>
@@ -219,14 +221,12 @@
         <image src="./image/4dtEpDB__400x400.jpeg"></image>
       </div>
       <div class="modal-body">
-        <div id="dialogTitle"/>
+        <div id="dialogTitle" />
       </div>
       <div>
         <a href="http://twitter.com/share?url=https://trysail.jp/&text=てすと" target="_blank">Twitterで共有</a>
       </div>
-      <div>
-        <a href="https://tabelog.com/kanagawa/A1401/A140101/14000059/" target="_blank">食べログで閲覧</a>
-      </div>
+      <div id="tabelogLink" />
     </div>
 </body>
 
