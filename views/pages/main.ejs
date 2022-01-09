@@ -38,8 +38,6 @@
       height: 100%;
       /* Full height */
       overflow: auto;
-      /* Enable scroll if needed */
-      background-color: rgb(0, 0, 0);
       /* Fallback color */
       background-color: rgba(0, 0, 0, 0.4);
       /* Black w/ opacity */
@@ -47,19 +45,20 @@
       /* Fade in the background */
       -webkit-animation-duration: 0.4s;
       animation-name: fadeIn;
-      animation-duration: 0.4s
+      animation-duration: 0.2s
     }
 
     /* Modal Content */
     .modal-content {
       position: fixed;
-      bottom: 0;
+      bottom: 100px;
       background-color: #fefefe;
-      width: 100%;
+      width: 600px;
+      height: 800px;
       -webkit-animation-name: slideIn;
       -webkit-animation-duration: 0.4s;
       animation-name: slideIn;
-      animation-duration: 0.4s
+      animation-duration: 0.2s
     }
 
     /* The Close Button */
@@ -95,7 +94,7 @@
       }
 
       to {
-        bottom: 0;
+        bottom: 100px;
         opacity: 1
       }
     }
@@ -107,7 +106,7 @@
       }
 
       to {
-        bottom: 0;
+        bottom: 100px;
         opacity: 1
       }
     }
@@ -160,7 +159,16 @@
         rowElement[cnt].style.display = "";
       }
     }
-    function Dialog() {
+    function Dialog(e) {
+      var attr = e.getAttribute("id").split(",");
+      if(attr.length != 2) 
+      {
+        alert("Selected Item Error.");
+      }
+
+      var title = document.getElementById('dialogTitle')
+      title.innerHTML = attr[0] + " - " + attr[1];
+
       modal.style.display = "block";
     }
   </script>
@@ -182,18 +190,17 @@
       <td style="width: 300px;"><input type="text" id="inputText" class="i_search"></input></td>
       <td style="width: 30px;"><input type="button" value="検索" onclick="Search()"></td>
       <td style="width: 30px;"><input type="button" value="取消" onclick="Reset()"></td>
-      <td style="width: 30px;"><input type="button" value="テスト" onclick="Dialog()"></td>
     </tr>
   </table>
 
   <!-- Table items -->
-  <% const tr_s1='<tr onclick="Dialog()" id="'%>
+  <% const tr_s1='<tr onclick="Dialog(this)" id="'%>
   <% const tr_s2='"/>'%>
   <table class="t_main" border="0" id="mainTable">
     <tbody id="s_result">
-      <% for(let i=0; i < items.length; i++) { %><%- tr_s1 + items[i].station + tr_s2 %>
+      <% for(let i=0; i < items.length; i++) { %><%- tr_s1 + items[i].name + "," + items[i].station + tr_s2 %>
       <td style="width: 100px;">
-          <image src="./image/4dtEpDB__400x400.jpeg" width="100%"></image>
+        <image src="./image/4dtEpDB__400x400.jpeg" width="100%"></image>
       </td>
       <td>
         <div><%= items[i].name %> - <%= items[i].station %></div>
@@ -211,8 +218,16 @@
       <div class="modal-body">
         <image src="./image/4dtEpDB__400x400.jpeg"></image>
       </div>
+      <div class="modal-body">
+        <div id="dialogTitle"/>
+      </div>
+      <div>
+        <a href="http://twitter.com/share?url=https://trysail.jp/&text=てすと" target="_blank">Twitterで共有</a>
+      </div>
+      <div>
+        <a href="https://tabelog.com/kanagawa/A1401/A140101/14000059/" target="_blank">食べログで閲覧</a>
+      </div>
     </div>
-  </div>
 </body>
 
 </html>
