@@ -19,10 +19,6 @@
       height: 20px;
     }
 
-    /* b.storename {
-      color: red;
-    } */
-
     /* The Modal (background) */
     .modal {
       display: none;
@@ -34,15 +30,11 @@
       left: 0;
       top: 0;
       width: 100%;
-      /* Full width */
       height: 100%;
-      /* Full height */
       overflow: auto;
       /* Fallback color */
       background-color: rgba(0, 0, 0, 0.4);
-      /* Black w/ opacity */
       -webkit-animation-name: fadeIn;
-      /* Fade in the background */
       -webkit-animation-duration: 0.4s;
       animation-name: fadeIn;
       animation-duration: 0.2s
@@ -51,7 +43,6 @@
     /* Modal Content */
     .modal-content {
       position: fixed;
-      bottom: 100px;
       background-color: #fefefe;
       width: 600px;
       height: 800px;
@@ -159,6 +150,8 @@
         rowElement[cnt].style.display = "";
       }
     }
+
+    // ダイアログ表示
     function Dialog(e) {
       var selItem = e.getAttribute("id").split(",");
       if (selItem.length != 3) {
@@ -172,6 +165,11 @@
       link.innerHTML = "<a href=\"https://tabelog.com/" + selItem[2] + "\" target=\"_blank\">食べログで閲覧</a>"
 
       modal.style.display = "block";
+
+      //ダイアログ中央配置
+      var content = document.getElementById('myModalContent');
+      content.style.top = (window.innerHeight - content.clientHeight) / 2 + "px";
+      content.style.left = (window.innerWidth - content.clientWidth) / 2 + "px";
     }
   </script>
   <meta charset="UTF-8">
@@ -216,7 +214,7 @@
   <!-- The Modal -->
   <div id="myModal" class="modal">
     <!-- Modal content -->
-    <div class="modal-content">
+    <div id="myModalContent" class="modal-content">
       <div class="modal-body">
         <image src="./image/4dtEpDB__400x400.jpeg"></image>
       </div>
