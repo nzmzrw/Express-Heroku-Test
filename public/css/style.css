@@ -3,6 +3,7 @@ table.t_main {
     margin: auto;
     table-layout: fixed;
     width: 50%;
+    border-collapse: collapse;
   }
 
   table.t_sub {
@@ -13,6 +14,11 @@ table.t_main {
   input.i_search {
     resize: none;
     height: 20px;
+  }
+
+  .item_sub {
+    color: rgb(168, 168, 168);
+    font-size: small;
   }
 
   /* The Modal (background) */
@@ -98,7 +104,6 @@ table.t_main {
 
   section {
     max-width: 100px;
-    margin: 0 auto;
   }
   a.D_TwBtn {
     display: flex;
@@ -130,6 +135,41 @@ table.t_main {
     transition-duration: 0.2s;
   }
   a.D_TwBtn:hover span {
+    left: 0;
+    top: 0;
+    box-shadow: 0 0 4px #CAD4E2, -2px -2px 4px #FFF;
+  }
+
+  a.D_tabeBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    background: rgb(255, 255, 255);
+    position: relative;
+  }
+  a.D_tabeBtn span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: rgb(235, 157, 41);
+    box-sizing: border-box;
+    color: #333;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    box-shadow: 0px 5px 12px #CAD4E2, -6px -6px 12px #FFF;
+    border-radius: 10px;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    transition-duration: 0.2s;
+  }
+  a.D_tabeBtn:hover span {
     left: 0;
     top: 0;
     box-shadow: 0 0 4px #CAD4E2, -2px -2px 4px #FFF;

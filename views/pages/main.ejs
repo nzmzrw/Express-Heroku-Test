@@ -33,8 +33,14 @@
       }
     }
 
-    // ダイアログ表示
+    // 店名クリック → tr を取得してダイアログ表示
     function Dialog(e) {
+      var parent = e.parentNode.parentNode.parentNode;
+      Show(parent);
+    }
+
+    // ダイアログ表示
+    function Show(e) {
       var selItem = e.getAttribute("id").split(",");
       if (selItem.length != 3) {
         alert("Selected Item Error.");
@@ -44,7 +50,7 @@
       title.innerHTML = selItem[0] + " - " + selItem[1];
 
       var link = document.getElementById('tabelogLink')
-      link.innerHTML = "<a href=\"https://tabelog.com/" + selItem[2] + "\" target=\"_blank\">食べログで閲覧</a>"
+      link.innerHTML = "<a href=\"https://tabelog.com/" + selItem[2] + "\" target=\"_blank\" class=\"D_tabeBtn\"><span>食べログ</span></a>"
 
       modal.style.display = "block";
 
@@ -52,6 +58,7 @@
       var content = document.getElementById('myModalContent');
       content.style.top = (window.innerHeight - content.clientHeight) / 2 + "px";
       content.style.left = (window.innerWidth - content.clientWidth) / 2 + "px";
+
     }
   </script>
   <meta charset="UTF-8">
@@ -77,7 +84,7 @@
   </table>
 
   <!-- Table items -->
-  <% const tr_s1='<tr onclick="Dialog(this)" id="'%>
+  <% const tr_s1='<tr class="tr_main" id="'%>
   <% const tr_s2='"/>'%>
   <table class="t_main" border="0" id="mainTable">
     <tbody id="s_result">
@@ -86,7 +93,8 @@
         <image src="./image/4dtEpDB__400x400.jpeg" width="100%"></image>
       </td>
       <td>
-        <div><%= items[i].name %> - <%= items[i].station %></div>
+        <div><a href="javascript:void(0);" onclick="Dialog(this)"><%= items[i].name %></a><span class="item_sub"> - <%= items[i].station %></span>
+        </div>
         <div>掲載日 <%= items[i].date %></div>
       </td>
       </tr>
@@ -105,9 +113,21 @@
         <div id="dialogTitle" />
       </div>
       <div>
-        <section>
-          <a href="http://twitter.com/share?url=https://trysail.jp/&text=てすと" class="D_TwBtn"><span>Tweet</span></a>
-        </section>
+        <table>
+          <tr>
+            <td style="width: 300px;">
+              <section>
+                <a href="http://twitter.com/share?url=https://trysail.jp/&text=てすと"
+                  class="D_TwBtn"><span>Tweet</span></a>
+              </section>
+            </td>
+            <td style="width: 300px;">
+              <section>
+                <div id="tabelogLink" />ß
+              </section>
+            </td>
+          </tr>
+        </table>
       </div>
       <div id="tabelogLink" />
     </div>
