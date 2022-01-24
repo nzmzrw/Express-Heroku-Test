@@ -105,7 +105,9 @@
     <tbody id="s_result">
       <% for(let i=0; i < items.length; i++) { %><%- tr_s1 + items[i].name + "," + items[i].station + "," + items[i].tabelog + tr_s2 %>
       <td style="width: 100px;">
-        <image src="./image/4dtEpDB__400x400.jpeg" width="100%"></image>
+        <div id="listImage" />
+        <%- '<image src="./image/' + items[i].name + '.jpg" width="100%"></image>' %>
+        <!-- <image src="./image/suzukiya.jpg" width="100%"></image> -->
       </td>
       <td>
         <div>
@@ -124,7 +126,7 @@
     <!-- Modal content -->
     <div id="myModalContent" class="modal-content">
       <div class="modal-body">
-        <image src="./image/taniseya.jpg"></image>
+        <image src="./image/谷瀬家.jpg"></image>
       </div>
       <div class="modal-body">
         <div id="dialogTitle" />
@@ -147,7 +149,6 @@
           </tr>
         </table>
       </div>
-      <div id="tabelogLink" />
     </div>
 </body>
 
