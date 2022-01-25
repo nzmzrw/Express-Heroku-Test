@@ -21,6 +21,11 @@ table.t_main {
     font-size: small;
   }
 
+  .modal_image {
+    width: 80%; 
+    margin-left: 10%;
+  }
+
   /* The Modal (background) */
   .modal {
     display: none;
@@ -47,7 +52,7 @@ table.t_main {
     position: fixed;
     background-color: #fefefe;
     width: 600px;
-    height: 800px;
+    height: 700px;
     -webkit-animation-name: slideIn;
     -webkit-animation-duration: 0.4s;
     animation-name: slideIn;
