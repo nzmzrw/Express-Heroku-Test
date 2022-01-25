@@ -26,6 +26,10 @@ table.t_main {
     margin-left: 10%;
   }
 
+  .tr_main{
+    height: 88px;
+  }
+
   /* The Modal (background) */
   .modal {
     display: none;
