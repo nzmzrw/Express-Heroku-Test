@@ -88,13 +88,16 @@
 
 <body style="padding-top: 60px;">
   <header>
-    <h1>TestWeb</h1>
-    <div style="width: 110px; padding-left: 50px;">掲載店舗数：</div>
-    <div style="width: 50px;"><%= items.length %></div>
-    <div style="width: 170px;" class="cp_iptxt"><label class="ef"><input type="text" id="inputText" placeholder="駅名"
-          class="i_search" onchange="Search()"></input></label></div>
-    <div style="width: 50px;"><input type="button" value="検索" onclick="Search()"></div>
-    <div style="width: 50px;"><input type="button" value="リセット" onclick="Reset()"></div>
+    <!-- タイトルdiv -->
+    <div style="margin: 0 auto; display: flex; align-items: center;">
+      <div style="width: 110px;">TestWeb</div>
+      <div style="width: 110px; padding-left: 50px;">掲載店舗数：</div>
+      <div style="width: 50px;"><%= items.length %></div>
+      <div style="width: 170px;" class="cp_iptxt"><label class="ef"><input type="text" id="inputText" placeholder="駅名"
+            class="i_search" onchange="Search()"></input></label></div>
+      <div style="width: 50px;"><input type="button" value="検索" onclick="Search()"></div>
+      <div style="width: 50px;"><input type="button" value="リセット" onclick="Reset()"></div>
+    </div>
   </header>
 
   <!-- Table items -->
@@ -107,7 +110,7 @@
         <div id="listImage" />
         <%- '<image src="./image/' + items[i].name + '.jpg" width="100%"></image>' %>
       </td>
-      <td>
+      <td style="padding-left: 10px;">
         <div>
           <a href="javascript:void(0);" onclick="Dialog(this)"><%= items[i].name %></a>
           <span class="item_sub"> - <%= items[i].station %></span>

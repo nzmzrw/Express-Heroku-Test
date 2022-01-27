@@ -11,8 +11,9 @@ header {
   left: 0; /* 左右の固定位置を左から0pxにする */
   display: flex; /* 中の要素を横並びにする */
   align-items: center; /* 中の要素を上下中央に並べる */
-  border-top: 5px solid rgb(38, 139, 255);
+  border-top: 4px solid rgb(38, 139, 255);
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+  margin: auto;
 }
 
 body {
@@ -28,7 +29,7 @@ body {
 table.t_main {
     margin: auto;
     table-layout: fixed;
-    width: 50%;
+    width: 300px;
     border-collapse: collapse;
   }
 
