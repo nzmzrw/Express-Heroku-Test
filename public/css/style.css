@@ -1,4 +1,30 @@
 @charset "UTF-8";
+
+header {
+  width: 100%; /* 幅いっぱいを指定 */
+  height: 50px; /* 高さを50pxに指定 */
+  background: rgb(170, 242, 255); /* 背景色にグレーを指定 */
+  padding: 20px 50px; /* ヘッダーに上下左右それぞれ余白を指定 */
+  box-sizing: border-box; /* padding分を含んで幅を100%にするため */
+  position: fixed; /* ウィンドウを基準に画面に固定 */
+  top: 0; /* 上下の固定位置を上から0pxにする */
+  left: 0; /* 左右の固定位置を左から0pxにする */
+  display: flex; /* 中の要素を横並びにする */
+  align-items: center; /* 中の要素を上下中央に並べる */
+  border-top: 5px solid rgb(38, 139, 255);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  background: rgb(237, 251, 255);
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+}
+
 table.t_main {
     margin: auto;
     table-layout: fixed;
@@ -13,7 +39,7 @@ table.t_main {
 
   input.i_search {
     resize: none;
-    height: 20px;
+    height: 34px;
   }
 
   .item_sub {
@@ -182,4 +208,27 @@ table.t_main {
     left: 0;
     top: 0;
     box-shadow: 0 0 4px #CAD4E2, -2px -2px 4px #FFF;
+  }
+
+  /* 検索入力欄 */
+
+  .cp_iptxt {
+    position: relative;
+    padding-right: 20px;
+  }
+  .cp_iptxt input[type='text'] {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: #000000;
+    border: 1px solid #1b2538;
+    border-radius: 3px;
+  }
+  .ef input[type='text']:focus {
+    border: 1px solid #2339fc;
+    outline: none;
+    box-shadow: 0 0 5px 1px rgba(22, 65, 145, 0.5);
   }

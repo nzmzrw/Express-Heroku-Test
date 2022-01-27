@@ -86,21 +86,16 @@
   <title>Document</title>
 </head>
 
-<body>
-  <header style="background :rgb(179, 179, 179);">TestTitle</header>
-
-  <table class="t_sub" style="background: greenyellow;">
-    <tr>
-      <td style="width: 100px;"><label>掲載店舗数<%= items.length %></label></td>
-    </tr>
-    <tr>
-      <td style="width: 100px;"><label id="test_label">駅名検索</label></td>
-      <td style="width: 300px;"><input type="text" id="inputText" class="i_search" onchange="Search()"></input>
-      </td>
-      <td style="width: 30px;"><input type="button" value="検索" onclick="Search()"></td>
-      <td style="width: 30px;"><input type="button" value="取消" onclick="Reset()"></td>
-    </tr>
-  </table>
+<body style="padding-top: 60px;">
+  <header>
+    <h1>TestWeb</h1>
+    <div style="width: 110px; padding-left: 50px;">掲載店舗数：</div>
+    <div style="width: 50px;"><%= items.length %></div>
+    <div style="width: 170px;" class="cp_iptxt"><label class="ef"><input type="text" id="inputText" placeholder="駅名"
+          class="i_search" onchange="Search()"></input></label></div>
+    <div style="width: 50px;"><input type="button" value="検索" onclick="Search()"></div>
+    <div style="width: 50px;"><input type="button" value="リセット" onclick="Reset()"></div>
+  </header>
 
   <!-- Table items -->
   <% const tr_s1='<tr class="tr_main" onclick id="'%>
