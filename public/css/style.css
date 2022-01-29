@@ -211,7 +211,7 @@ table.t_main {
     box-shadow: 0 0 4px #CAD4E2, -2px -2px 4px #FFF;
   }
 
-  /* 検索入力欄 */
+  /* 検索入力欄*/
 
   .cp_iptxt {
     position: relative;
@@ -222,14 +222,14 @@ table.t_main {
     box-sizing: border-box;
     width: 100%;
     padding: 0.3em;
-    transition: 0.3s;
+    transition: 0.2s;
     letter-spacing: 1px;
     color: #000000;
-    border: 1px solid #1b2538;
+    border: 2px solid #999999;
     border-radius: 3px;
   }
   .ef input[type='text']:focus {
-    border: 1px solid #2339fc;
+    border: 2px solid #2339fc;
     outline: none;
     box-shadow: 0 0 5px 1px rgba(22, 65, 145, 0.5);
   }

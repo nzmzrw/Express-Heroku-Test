@@ -70,6 +70,10 @@
       var ta_link = document.getElementById('tabelogLink')
       ta_link.innerHTML = "<a href=\"https://tabelog.com/" + selItem[2] + "\" target=\"_blank\" class=\"D_tabeBtn\"><span>食べログ</span></a>"
 
+      //Google Mapリンク
+      var ma_link = document.getElementById('mapLink')
+      ma_link.innerHTML = "<a href=\"https://www.google.com/maps/dir/?api=1&destination=横浜駅+吉村家\" target=\"_blank\" class=\"D_tabeBtn\"><span>経路検索</span></a>"
+
       modal.style.display = "block";
 
       //ダイアログ中央配置
@@ -133,14 +137,19 @@
       <div>
         <table>
           <tr>
-            <td style="width: 300px;">
+            <td style="width: 200px;">
               <section>
                 <div id="TweetLink" />
               </section>
             </td>
-            <td style="width: 300px;">
+            <td style="width: 200px;">
               <section>
                 <div id="tabelogLink" />
+              </section>
+            </td>
+            <td style="width: 200px;">
+              <section>
+                <div id="mapLink" />
               </section>
             </td>
           </tr>
