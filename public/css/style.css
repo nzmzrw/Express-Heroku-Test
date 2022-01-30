@@ -53,8 +53,18 @@ table.t_main {
     margin-left: 10%;
   }
 
-  .tr_main{
+  .tr_main {
     height: 88px;
+  }
+
+  .modal_body a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: #FFF;
   }
 
   /* The Modal (background) */
@@ -141,74 +151,41 @@ table.t_main {
   section {
     max-width: 100px;
   }
-  a.D_TwBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    box-sizing: border-box;
-    background: rgb(255, 255, 255);
-    position: relative;
+  
+  a.cp_btn_a {
+    
+    background: #2798cc;
+    border-bottom: 2px solid #279863;
+    border-radius: 4px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
   }
-  a.D_TwBtn span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    background: rgb(113, 208, 252);
-    box-sizing: border-box;
-    color: #333;
-    font-size: 14px;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    box-shadow: 0px 5px 12px #CAD4E2, -6px -6px 12px #FFF;
-    border-radius: 10px;
-    position: absolute;
-    top: -5px;
-    left: 0;
-    transition-duration: 0.2s;
-  }
-  a.D_TwBtn:hover span {
-    left: 0;
-    top: 0;
-    box-shadow: 0 0 4px #CAD4E2, -2px -2px 4px #FFF;
+  a.cp_btn_a:active {
+    border-bottom: 2px solid #26C6DA;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
   }
 
-  a.D_tabeBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    box-sizing: border-box;
-    background: rgb(255, 255, 255);
-    position: relative;
+  a.cp_btn_b {
+    
+    background: #e99f3f;
+    border-bottom: 2px solid #e99f1f;
+    border-radius: 4px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
   }
-  a.D_tabeBtn span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    background: rgb(235, 157, 41);
-    box-sizing: border-box;
-    color: #333;
-    font-size: 14px;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    box-shadow: 0px 5px 12px #CAD4E2, -6px -6px 12px #FFF;
-    border-radius: 10px;
-    position: absolute;
-    top: -5px;
-    left: 0;
-    transition-duration: 0.2s;
+  a.cp_btn_b:active {
+    border-bottom: 2px solid #26C6DA;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
   }
-  a.D_tabeBtn:hover span {
-    left: 0;
-    top: 0;
-    box-shadow: 0 0 4px #CAD4E2, -2px -2px 4px #FFF;
+
+  a.cp_btn_c {
+    
+    background: #df4d4d;
+    border-bottom: 2px solid #df4d28;
+    border-radius: 4px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+  a.cp_btn_c:active {
+    border-bottom: 2px solid #26C6DA;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
   }
 
   /* 検索入力欄*/
