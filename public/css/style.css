@@ -93,7 +93,7 @@ table.t_main {
     position: fixed;
     background-color: #ffffff;
     width: 480px;
-    height: 600px;
+    height: 580px;
     -webkit-animation-name: slideIn;
     -webkit-animation-duration: 0.4s;
     animation-name: slideIn;
@@ -149,6 +149,10 @@ table.t_main {
 
   /* ボタン */
 
+  .modal_btnList{
+    margin-top: 3px;
+  }
+
  .modal_btnList li {
   color: #FFF;
   border-radius: 4px;
@@ -160,10 +164,10 @@ table.t_main {
   position: relative;
   display: block;
   color: #FFF;
-  border-radius: 6px;
-  margin-bottom: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
   text-decoration: none;
-  padding: 20px;
+  padding: 18px;
   text-align: center;
  }
   
