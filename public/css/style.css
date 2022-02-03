@@ -93,7 +93,7 @@ table.t_main {
     position: fixed;
     background-color: #ffffff;
     width: 480px;
-    height: 580px;
+    height: 450px;
     -webkit-animation-name: slideIn;
     -webkit-animation-duration: 0.4s;
     animation-name: slideIn;
@@ -150,14 +150,15 @@ table.t_main {
   /* ボタン */
 
   .modal_btnList{
-    margin-top: 3px;
+    margin-top: 10px;
   }
 
  .modal_btnList li {
+  display: inline-block;
   color: #FFF;
   border-radius: 4px;
   list-style: none;
-  width: 130px;
+  width: 120px;
  }
 
  .modal_btnList a {
@@ -165,7 +166,7 @@ table.t_main {
   display: block;
   color: #FFF;
   border-radius: 8px;
-  margin-bottom: 15px;
+  margin-left: 15px;
   text-decoration: none;
   padding: 18px;
   text-align: center;
