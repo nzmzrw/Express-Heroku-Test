@@ -29,7 +29,7 @@ body {
 table.t_main {
     margin: auto;
     table-layout: fixed;
-    width: 400px;
+    width: 350px;
     border-collapse: separate;
     border-spacing: 0px 8px;
   }
