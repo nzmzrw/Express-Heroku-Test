@@ -43,8 +43,8 @@
 
     // 店名クリック → tr を取得してダイアログ表示
     function Dialog(e) {
-      var parent = e.parentNode.parentNode.parentNode;
-      Show(parent);
+      //var parent = e.parentNode.parentNode.parentNode;
+      Show(e);
     }
 
     // ダイアログ表示
@@ -63,18 +63,18 @@
 
       //画像
       var image = document.getElementById('ImagePanel')
-      image.innerHTML = "<image class=\"modal_image\" src=\"./image/" + selItem[0] + ".jpg\"/>"
-      //ツイッターリンク
-      var tw_link = document.getElementById('TweetLink')
-      tw_link.innerHTML = "<a href=\"http://twitter.com/share?url=https://trysail.jp/&text="
-        + selItem[0] + "\" target=\"_blank\" class=\"cp_btn_a\"><span>Tweet</span></a>"
-      // 食べログリンク
-      var ta_link = document.getElementById('tabelogLink')
-      ta_link.innerHTML = "<a href=\"https://tabelog.com/" + selItem[2] + "\" target=\"_blank\" class=\"cp_btn_b\"><span>食べログ</span></a>"
+      image.innerHTML = "<image class=\"modal_image\" src=\"./image/" + selItem[0] + ".jpg\"></image>"
       //Google Mapリンク
       var ma_link = document.getElementById('mapLink')
       ma_link.innerHTML = "<a href=\"https://www.google.com/maps/dir/?api=1&destination=" + selItem[1] + "+" + selItem[0] +
-        "\" target=\"_blank\" class=\"cp_btn_c\"><image src=\"./image/tabelog.png\"/><span>経路検索</span></a>"
+        "\" target=\"_blank\" class=\"link_ma\"><span>Google Map</span></a>"
+      // 食べログリンク
+      var ta_link = document.getElementById('tabelogLink')
+      ta_link.innerHTML = "<a href=\"https://tabelog.com/" + selItem[2] + "\" target=\"_blank\" class=\"link_ta\"><span>tabelog</span></a>"
+      //ツイッターリンク
+      var tw_link = document.getElementById('TweetLink')
+      tw_link.innerHTML = "<a href=\"http://twitter.com/share?url=https://trysail.jp/&text="
+        + selItem[0] + "\" target=\"_blank\" class=\"link_tw\"><span>Tweet</span></a>"
 
       modal.style.display = "block";
 
@@ -107,18 +107,18 @@
   </header>
 
   <!-- Table items -->
-  <% const tr_s1='<tr class="tr_main" onclick id="'%>
+  <% const tr_s1='<tr class="tr_main" onclick="Dialog(this)" id="'%>
   <% const tr_s2='"/>'%>
-  <table class="t_main" border="0" id="mainTable">
+  <table class="t_main" id="mainTable">
     <tbody id="s_result">
       <% for(let i=0; i < items.length; i++) { %><%- tr_s1 + items[i].name + "," + items[i].station + "," + items[i].tabelog + tr_s2 %>
-      <td style="width: 100px;">
+      <td style="width: 100px; padding: 0px 10px;">
         <div id="listImage" />
         <%- '<image src="./image/' + items[i].name + '.jpg" width="100%"></image>' %>
       </td>
       <td style="padding-left: 10px;">
         <div>
-          <a href="javascript:void(0);" onclick="Dialog(this)"><%= items[i].name %></a>
+          <a href="javascript:void(0);"><%= items[i].name %></a>
           <span class="item_sub"> - <%= items[i].station %></span>
         </div>
         <div><span class="item_sub">掲載日: <%= items[i].date %></span></div>
@@ -132,33 +132,24 @@
   <div id="myModal" class="modal">
     <!-- Modal content -->
     <div id="myModalContent" class="modal-content">
+      
       <div class="modal_body" id="ImagePanel" style="width: 100%; margin: auto;"></div>
-      <div class="modal_body">
-        <div id="dialogTitle" />
-      </div>
+      <div id="dialogTitle" style="font-weight: bold; font-size: 24px; margin: 0 10%;" ></div>
       <div>
-        <table style="width: 100%;">
-          <tr style="height: 150px">
-            <td colspan="2" style="height: 150px; width: 100%;">
-
-              <div id="TweetLink" style="height: 100%; width: 100%;" />
-            </td>
-          </tr>
-          <tr style="height: 100px">
-            <td style="height: 100px; width: 50%;">
-
-              <div id="mapLink" style="height: 100%; width: 100%;" />
-
-            </td>
-            <td style="height: 100px; width: 50%;">
-
-              <div id="tabelogLink" style="height: 100%; width: 100%;" />
-
-            </td>
-          </tr>
-        </table>
+        <ul class="modal_btnList">
+          <li>
+            <div id="mapLink" />
+          </li>
+          <li>
+            <div id="tabelogLink" />
+          </li>
+          <li>
+            <div id="TweetLink" />
+          </li>
+        </ul>
       </div>
     </div>
+  </div>
 </body>
 
 </html>
