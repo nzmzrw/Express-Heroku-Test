@@ -17,6 +17,10 @@ const pool = new Pool({
 pool.connect()
   .then(console.log("Client disconnected successfully"));
 
+
+  // アクセス数
+  let test = 0;
+
 //TOP画面読み込み
 async function readTopPage(req, res, next) {
   try {
@@ -31,6 +35,9 @@ async function readTopPage(req, res, next) {
     res.render("pages/main.ejs", {
       items: items,
     });
+
+    test++;
+    console.log("Access Count ; " + test);
   }
   catch (ex) {
     console.log(`Something wrong happend ${ex}`)
