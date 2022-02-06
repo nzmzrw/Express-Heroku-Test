@@ -17,7 +17,7 @@ header {
 }
 
 body {
-  background: rgb(237, 251, 255);
+  background: rgb(226, 249, 255);
   font-family: "Helvetica Neue",
     Arial,
     "Hiragino Kaku Gothic ProN",
@@ -25,6 +25,30 @@ body {
     Meiryo,
     sans-serif;
 }
+
+/* 店舗数 / Access カウンター */
+.Data_dispList{
+  width: 400px;
+  margin: 5px auto 5px;
+  padding-left: 0;
+  background: white;
+  border-radius: 4px;
+}
+.Data_dispList li {
+  display: inline-block;
+  color: black;
+  list-style: none;
+  width: 49%;
+ }
+
+ .Data_displabel_1{
+  color: rgb(168, 168, 168);
+  font-size: small;
+ }
+
+ .Data_displabel_2{
+  font-weight: bold;
+ }
 
 table.t_main {
     margin: auto;

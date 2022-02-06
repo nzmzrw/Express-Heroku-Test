@@ -96,17 +96,29 @@
   <header>
     <!-- タイトルdiv -->
     <div style="margin: 0 auto; display: flex; align-items: center;">
-      <div style="width: 80px;"><image src="./image/na_web.png" width="100%"></image></div>
-      <div style="width: 110px; padding-left: 50px;">掲載店舗数：</div>
-      <div style="width: 50px;"><%= items.length %></div>
-      <div style="width: 110px; padding-left: 50px;">アクセス数：</div>
-      <div style="width: 50px;"><%= Access %></div>
+      <div style="width: 80px;">
+        <image src="./image/na_web.png" width="100%"></image>
+      </div>
       <div style="width: 170px;" class="cp_iptxt"><label class="ef"><input type="text" id="inputText" placeholder="駅名"
             class="i_search" onchange="Search()"></input></label></div>
       <div style="width: 50px;"><input type="button" value="検索" onclick="Search()"></div>
       <div style="width: 50px;"><input type="button" value="リセット" onclick="Reset()"></div>
     </div>
   </header>
+
+  <!-- 店舗数 / Access カウンター -->
+  <div>
+    <ul class="Data_dispList">
+      <li>
+        <div class="Data_displabel_1">掲載店舗数</div>
+        <div class="Data_displabel_2"><%= items.length %></div>
+      </li>
+      <li>
+        <div class="Data_displabel_1">アクセス数</div>
+        <div class="Data_displabel_2"><%= Access %></div>
+      </li>
+    </ul>
+  </div>
 
   <!-- Table items -->
   <% const tr_s1='<tr class="tr_main" onclick="Dialog(this)" id="'%>
@@ -132,11 +144,9 @@
 
   <!-- The Modal -->
   <div id="myModal" class="modal">
-    <!-- Modal content -->
     <div id="myModalContent" class="modal-content">
-      
       <div class="modal_body" id="ImagePanel" style="width: 100%; margin: auto;"></div>
-      <div id="dialogTitle" style="font-weight: bold; font-size: 24px; margin: 0 10%;" ></div>
+      <div id="dialogTitle" style="font-weight: bold; font-size: 24px; margin: 0 10%;"></div>
       <div>
         <ul class="modal_btnList">
           <li>
