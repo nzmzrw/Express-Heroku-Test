@@ -29,7 +29,7 @@ body {
 /* 店舗数 / Access カウンター */
 .Data_dispList{
   width: 350px;
-  margin: 5px auto 5px;
+  margin: 5px auto;
   padding-left: 0;
   background: white;
   border-radius: 4px;
@@ -38,7 +38,8 @@ body {
   display: inline-block;
   color: black;
   list-style: none;
-  width: 49%;
+  width: 45%;
+  margin-left: 3%;
  }
 
  .Data_displabel_1{
@@ -48,6 +49,7 @@ body {
 
  .Data_displabel_2{
   font-weight: bold;
+  font-size: large;
  }
 
 table.t_main {
