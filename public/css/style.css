@@ -86,7 +86,7 @@ body {
   height: 20px;
   resize: none;
   border-radius: 4px;
-  border: 2px solid #999999;
+  border: 2px solid #999999cb;
  }
 
  .Top_info_Area input[type='text']:focus {
