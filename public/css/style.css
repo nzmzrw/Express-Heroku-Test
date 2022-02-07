@@ -66,6 +66,7 @@ body {
 
 .Top_info_Area ul {
   padding-left: 0;
+  margin-bottom: 5px;
 }
 
 .Top_info_Area li {
@@ -75,6 +76,24 @@ body {
   width: 45%;
   margin-left: 3%;
  }
+
+ .Top_info_Area input {
+  display: inline-block;
+  color: black;
+  list-style: none;
+  margin: 1.5% 5%;
+  width: 60%;
+  height: 20px;
+  resize: none;
+  border-radius: 4px;
+  border: 2px solid #999999;
+ }
+
+ .Top_info_Area input[type='text']:focus {
+  border: 2px solid rgba(34, 104, 255, 0.705);
+  outline: none;
+  box-shadow: 0 0 1px 1px rgba(22, 65, 145, 0.5);
+}
 
  .Data_displabel_1 {
   color: rgb(168, 168, 168);
