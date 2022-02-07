@@ -92,7 +92,7 @@
   <title>na_web</title>
 </head>
 
-<body style="padding-top: 60px;">
+<body style="padding-top: 40px;">
   <header>
     <!-- タイトルdiv -->
     <div style="margin: 0 auto; display: flex; align-items: center;">
@@ -100,18 +100,14 @@
         <image src="./image/na_web.png" width="80px"></image>
       </div>
       <div style="width: 80px; margin: 0 10px;"><a href="https://trysail.jp/" class="Top_btn"><span style="font-weight: bold;">Home</span></a></div>
-      <div style="width: 80px; margin: 0 10px;"><a href="https://trysail.jp/" class="Top_btn2"><span style="font-weight: bold;">#na_eats</span></a></div>
+      <div style="width: 80px; margin: 0 10px;"><a href="https://trysail.jp/" class="Top_btn"><span style="font-weight: bold;">#na_eats</span></a></div>
       <div style="width: 80px; margin: 0 10px;"><a href="https://trysail.jp/" class="Top_btn2"><span style="font-weight: bold;">about</span></a></div>
-      <div style="width: 170px;" class="cp_iptxt"><label class="ef"><input type="text" id="inputText" placeholder="駅名"
-            class="i_search" onchange="Search()"></input></label></div>
-      <div style="width: 50px;"><input type="button" value="検索" onclick="Search()"></div>
-      <div style="width: 50px;"><input type="button" value="リセット" onclick="Reset()"></div>
     </div>
   </header>
 
-  <!-- 店舗数 / Access カウンター -->
-  <div>
-    <ul class="Data_dispList">
+  <!-- 検索ボックス / 店舗数 / Access カウンター -->
+  <div class="Top_info_Area">
+    <ul>
       <li>
         <div class="Data_displabel_1">掲載店舗数</div>
         <div class="Data_displabel_2"><%= items.length %></div>
@@ -121,6 +117,10 @@
         <div class="Data_displabel_2"><%= Access %></div>
       </li>
     </ul>
+    <div><input type="text" id="inputText" placeholder="駅名"
+      class="i_search" onchange="Search()"></input></div>
+    <div>
+  </div>
   </div>
 
   <!-- Table items -->
