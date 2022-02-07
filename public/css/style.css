@@ -26,6 +26,35 @@ body {
     sans-serif;
 }
 
+/* Top ボタン */
+.Top_btn{
+  background: white;
+  color: rgb(105, 180, 194);
+  padding: 3px;
+  border-radius: 15px;
+  text-decoration: none;
+  display: block;
+  font-size: small;
+  text-align: center;
+  border: 1px solid rgba(105, 181, 194, 0.5);
+}
+
+.Top_btn2{
+  background: rgb(105, 180, 194);
+  color: white;
+  padding: 3px;
+  border-radius: 15px;
+  text-decoration: none;
+  display: block;
+  font-size: small;
+  text-align: center;
+  border: 1px solid rgba(105, 181, 194, 0.5);
+}
+
+.Top_btn2:hover{
+  background: rgb(123, 194, 223);
+}
+
 /* 店舗数 / Access カウンター */
 .Data_dispList{
   width: 350px;
