@@ -36,7 +36,6 @@ body {
   display: block;
   font-size: small;
   text-align: center;
-  border: 0px solid rgba(105, 181, 194, 0.5);
 }
 
 .Top_btn2{
@@ -48,7 +47,6 @@ body {
   display: block;
   font-size: small;
   text-align: center;
-  border: 0px solid rgba(105, 181, 194, 0.5);
 }
 
 .Top_btn2:hover{
@@ -59,7 +57,6 @@ body {
 .Top_info_Area {
   width: 350px;
   margin: 1px auto;
-  
   background: white;
   border-radius: 4px;
 }
@@ -81,9 +78,9 @@ body {
   display: inline-block;
   color: black;
   list-style: none;
-  margin: 1.5% 5%;
-  width: 60%;
-  height: 20px;
+  margin: 0 5%;
+  height: 83%;
+  width: 90%;
   resize: none;
   border-radius: 4px;
   border: 2px solid #999999cb;
@@ -103,6 +100,19 @@ body {
  .Data_displabel_2 {
   font-weight: bold;
   font-size: large;
+ }
+
+ .Search_btn{
+  background: rgb(55, 192, 255);
+  color: rgb(255, 255, 255);
+  /* margin: 1.5% 5%; */
+  padding: 15%;
+  border-radius: 5px;
+  text-decoration: none;
+  display: block;
+  font-size: 6px;
+  text-align: center;
+  border: 2px solid rgb(105, 144, 194);
  }
 
 table.t_main {
