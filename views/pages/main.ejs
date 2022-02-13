@@ -63,7 +63,7 @@
 
       //画像
       var image = document.getElementById('ImagePanel')
-      image.innerHTML = "<image class=\"modal_image\" src=\"./image/" + selItem[0] + ".jpg\"></image>"
+      image.innerHTML = "<img src=\"./image/" + selItem[0] + ".jpg\"></image>"
       //Google Mapリンク
       var ma_link = document.getElementById('mapLink')
       ma_link.innerHTML = "<a href=\"https://www.google.com/maps/dir/?api=1&destination=" + selItem[1] + "+" + selItem[0] +
@@ -89,59 +89,54 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
-  <title>na_web</title>
+  <title>#na_web</title>
 </head>
 
-<body style="padding-top: 40px;">
+<body>
+
+  <!-- トップバー関連 -->
   <header>
-    <!-- タイトルdiv -->
-    <div style="margin: 0 auto; display: flex; align-items: center;">
-      <div style="width: 100px;">
-        <image src="./image/na_web.png" width="80px"></image>
-      </div>
-      <div style="width: 80px; margin: 0 10px;"><a href="https://trysail.jp/" class="Top_btn"><span
-            style="font-weight: bold;">Home</span></a></div>
-      <div style="width: 80px; margin: 0 10px;"><a href="https://trysail.jp/" class="Top_btn"><span
-            style="font-weight: bold;">#na_eats</span></a></div>
-      <div style="width: 80px; margin: 0 10px;"><a href="https://trysail.jp/" class="Top_btn2"><span
-            style="font-weight: bold;">about</span></a></div>
+    <div class="Top_main">
+      <div class="Top_image"><img src="./image/na_web.png" /></div>
+      <div class="Top_btn_On"><a href="https://trysail.jp/"><span>Home</span></a></div>
+      <div class="Top_btn_Off"><a href="https://trysail.jp/"><span>#na_eats</span></a></div>
+      <div class="Top_btn_Off"><a href="https://trysail.jp/"><span>about</span></a></div>
     </div>
   </header>
 
-  <!-- 検索ボックス / 店舗数 / Access カウンター -->
-  <div class="Top_info_Area">
+  <!-- データ表示、検索機能関連 -->
+  <div class="Info_main">
     <ul>
       <li>
-        <div class="Data_displabel_1">掲載店舗数</div>
-        <div class="Data_displabel_2"><%= items.length %></div>
+        <div class="Info_text_s">掲載店舗数</div>
+        <div class="Info_text_m"><%= items.length %></div>
       </li>
       <li>
-        <div class="Data_displabel_1">サイトアクセス数</div>
-        <div class="Data_displabel_2"><%= Access %></div>
+        <div class="Info_text_s">サイトアクセス数</div>
+        <div class="Info_text_m"><%= Access %></div>
       </li>
     </ul>
-    <div style="display: flex; padding-bottom: 10px;">
-      <div style="width: 80%;"><input type="text" id="inputText" placeholder="駅名" onchange="Search()"></input></div>
-      <div style="width: 15%;"><a href="javascript:void(0);" class="Search_btn"><span style="font-weight: bold;">検索</span></a></div>
+    <div class="Info_Serach">
+      <div class="Info_box"><input type="text" id="inputText" placeholder="駅名" onchange="Search()" /></div>
+      <div class="Info_btn"><a href="javascript:void(0);" onclick="Search()"><span>検索</span></a></div>
     </div>
   </div>
 
-  <!-- Table items -->
-  <% const tr_s1='<tr class="tr_main" onclick="Dialog(this)" id="'%>
-  <% const tr_s2='"/>'%>
-  <table class="t_main" id="mainTable">
-    <tbody id="s_result">
-      <% for(let i=0; i < items.length; i++) { %><%- tr_s1 + items[i].name + "," + items[i].station + "," + items[i].tabelog + tr_s2 %>
-      <td style="width: 100px; padding: 0px 10px;">
-        <div id="listImage" />
-        <%- '<image src="./image/' + items[i].name + '.jpg" width="100%"></image>' %>
+  <!-- テーブル関連 -->
+  <% const tr_1='<tr class="Tbl_tr" onclick="Dialog(this)" id="'%>
+  <% const tr_2='"/>'%>
+  <table class="Tbl_main" id="mainTable">
+    <tbody>
+      <% for(let i=0; i < items.length; i++) { %><%- tr_1 + items[i].name + "," + items[i].station + "," + items[i].tabelog + tr_2 %>
+      <td class="Tbl_td_img">
+        <%- '<img src="./image/' + items[i].name + '.jpg" />' %>
       </td>
-      <td style="padding-left: 10px;">
+      <td class="Tbl_td_data">
         <div>
-          <a href="javascript:void(0);" style="font-weight: bold;"><%= items[i].name %></a>
-          <span class="item_sub"> - <%= items[i].station %></span>
+          <a href="javascript:void(0);"><%= items[i].name %></a>
+          <span> - <%= items[i].station %></span>
         </div>
-        <div><span class="item_sub">掲載日: <%= items[i].date %></span></div>
+        <div><span>掲載日: <%= items[i].date %></span></div>
       </td>
       </tr>
       <% } %>
@@ -149,12 +144,12 @@
   </table>
 
   <!-- The Modal -->
-  <div id="myModal" class="modal">
-    <div id="myModalContent" class="modal-content">
-      <div class="modal_body" id="ImagePanel" style="width: 100%; margin: auto;"></div>
-      <div id="dialogTitle" style="font-weight: bold; font-size: 24px; margin: 0 10%;"></div>
+  <div id="myModal" class="Mdl_main">
+    <div id="myModalContent" class="Mdl_content">
+      <div id="ImagePanel" class="Mdl_img"></div>
+      <div id="dialogTitle" class="Mdl_title"></div>
       <div>
-        <ul class="modal_btnList">
+        <ul class="Mdl_btn_list">
           <li>
             <div id="mapLink" />
           </li>
