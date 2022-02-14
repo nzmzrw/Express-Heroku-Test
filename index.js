@@ -13,7 +13,8 @@ express()
   .set('views', require('path').join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .use(express.static('public'))
-  .get('', readTopPage)
+  .get('', Page_home)
+  .get('/about', Page_about)
   .listen(PORT, () => console.log(`Listening on ${PORT}`))
 
 //環境変数より、接続文字列を取得
@@ -25,7 +26,7 @@ pool.connect()
   .then(console.log("Database Connected."));
 
 //TOP画面読み込み
-async function readTopPage(req, res, next) {
+async function Page_home(req, res, next) {
   try {
     //テーブル取得
     const result = await pool.query('select * from ramen')
@@ -39,7 +40,31 @@ async function readTopPage(req, res, next) {
     console.log("Access Count : " + Access.toString());
 
     //ページ表示
-    res.render("pages/main.ejs", {
+    res.render("pages/home.ejs", {
+      items: items,
+      Access: Access,
+    });
+  }
+  catch (ex) {
+    console.log(`Something wrong happend ${ex}`)
+  }
+}
+
+async function Page_about(req, res, next) {
+  try {
+    //テーブル取得
+    const result = await pool.query('select * from ramen')
+
+    //取得したデータで、テーブルを生成
+    let items = [];
+    items = result.rows;
+
+    // アクセス数記録
+    Access++;
+    console.log("Access Count : " + Access.toString());
+
+    //ページ表示
+    res.render("pages/about.ejs", {
       items: items,
       Access: Access,
     });

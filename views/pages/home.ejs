@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="ja">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <title>#na_web</title>
+</head>
+<body>
+  <script src="./script/home.js"></script>
+  <!-- トップバー関連 -->
+  <header>
+    <div class="Top_main">
+      <!-- <div class="Top_image"><img src="./image/noname.png" /></div> -->
+      <div class="Top_image"><svg width="100" height="30" xmlns="http://www.w3.org/2000/svg">
+        <g id="Layer_1">
+         <title>Layer 1</title>
+         <text stroke-width="0" font-weight="bold" transform="matrix(1.22256 0 0 1.40389 -25.7912 -21.285)" stroke="#000" xml:space="preserve" text-anchor="start" font-family="'Caveat'" font-size="17" id="svg_1" y="31.0751" x="21.30432" fill="#c40909">#na_web</text>
+        </g>
+       
+       </svg></div>
+      <div class="Top_btn_On"><a href="http://localhost:5000"><span>Home</span></a></div>
+      <div class="Top_btn_Off"><a href="http://localhost:5000/about"><span>about</span></a></div>
+    </div>
+  </header>
+  <!-- データ表示、検索機能関連 -->
+  <div class="Info_main">
+    <ul>
+      <li>
+        <div class="Info_text_s">掲載店舗数</div>
+        <div class="Info_text_m"><%= items.length %></div>
+      </li>
+      <li>
+        <div class="Info_text_s">サイトアクセス数</div>
+        <div class="Info_text_m"><%= Access %></div>
+      </li>
+    </ul>
+    <div class="Info_Serach">
+      <div class="Info_box"><input type="text" id="inputText" placeholder="駅名" onchange="Search()" /></div>
+      <div class="Info_btn"><a href="javascript:void(0);" onclick="Search()"><span>検索</span></a></div>
+    </div>
+  </div>
+  <!-- テーブル関連 -->
+  <% const tr_1='<tr class="Tbl_tr" onclick="Show(this)" id="'%>
+  <% const tr_2='"/>'%>
+  <table class="Tbl_main" id="mainTable">
+    <tbody>
+      <% for(let i=0; i < items.length; i++) { %><%- tr_1 + items[i].name + "," + items[i].station + "," + items[i].tabelog + tr_2 %>
+      <td class="Tbl_td_img">
+        <%- '<img src="./image/' + items[i].name + '.jpg" />' %>
+      </td>
+      <td class="Tbl_td_data">
+        <div>
+          <a href="javascript:void(0);"><%= items[i].name %></a>
+          <span> - <%= items[i].station %></span>
+        </div>
+        <div><span>掲載日: <%= items[i].date %></span></div>
+      </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+  <!-- The Modal -->
+  <div id="myModal" class="Mdl_main">
+    <div id="myModalContent" class="Mdl_content">
+      <div id="ImagePanel" class="Mdl_img"></div>
+      <div id="dialogTitle" class="Mdl_title"></div>
+      <div>
+        <ul class="Mdl_btn_list">
+          <li>
+            <div id="mapLink" />
+          </li>
+          <li>
+            <div id="tabelogLink" />
+          </li>
+          <li>
+            <div id="TweetLink" />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

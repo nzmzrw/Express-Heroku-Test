@@ -18,7 +18,7 @@ body {
 header {
   width: 100%; /* 幅いっぱいを指定 */
   height: 50px; /* 高さを50pxに指定 */
-  background: rgb(170, 242, 255); /* 背景色にグレーを指定 */
+  background: rgb(149, 232, 247); /* 背景色にグレーを指定 */
   padding: 20px 50px; /* ヘッダーに上下左右それぞれ余白を指定 */
   box-sizing: border-box; /* padding分を含んで幅を100%にするため */
   position: fixed; /* ウィンドウを基準に画面に固定 */
@@ -38,7 +38,7 @@ header {
 }
   
 .Top_image {
-  width: 100px;
+  width: 116px;
 }
 
 .Top_image img{
@@ -77,7 +77,7 @@ header {
   text-align: center;
 }
 
-.Top_btn_Off:hover{
+.Top_btn_Off:hover a{
   background: rgb(188, 226, 241);
 }
 
@@ -161,7 +161,7 @@ header {
   display: block;
   font-size: 6px;
   text-align: center;
-  border: 2px solid rgb(105, 144, 194);
+  border: 1px solid rgb(105, 144, 194);
  }
 
  .Info_btn span{
@@ -298,7 +298,7 @@ header {
     width: 100%; 
     margin: auto;
   }
-  
+
   .Mdl_img img {
     width: 80%; 
     margin: 5% 10% 0 10%;
