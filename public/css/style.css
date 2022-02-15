@@ -40,7 +40,7 @@ header {
 .Top_image {
   width: 80px;
   height: 30px;
-  padding: 0 15px;
+  padding: 0 0px;
   box-sizing: border-box;
   background: red;
 }
