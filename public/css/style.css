@@ -41,6 +41,7 @@ header {
   width: 80px;
   height: 30px;
   padding: 0 15px;
+  box-sizing: border-box;
 }
 
 .Top_image img{
