@@ -40,8 +40,8 @@ header {
 .Top_image {
   width: 80px;
   height: 30px;
-  padding: 0 0px;
-  background:green;
+  margin: 0 0px;
+  background:blue;
 }
 
 .Top_image img{
