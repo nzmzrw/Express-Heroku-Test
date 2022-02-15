@@ -18,7 +18,7 @@ body {
 header {
   width: 100%; /* 幅いっぱいを指定 */
   height: 50px; /* 高さを50pxに指定 */
-  background: rgb(149, 232, 247); /* 背景色にグレーを指定 */
+  background: rgb(137, 234, 252); /* 背景色にグレーを指定 */
   padding: 20px 50px; /* ヘッダーに上下左右それぞれ余白を指定 */
   box-sizing: border-box; /* padding分を含んで幅を100%にするため */
   position: fixed; /* ウィンドウを基準に画面に固定 */
@@ -40,7 +40,7 @@ header {
 .Top_image {
   width: 80px;
   height: 30px;
-padding: 0 10px;
+  padding: 0 15px;
 }
 
 .Top_image img{
