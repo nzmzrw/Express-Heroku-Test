@@ -60,10 +60,6 @@ var modal;
       // 食べログリンク
       var ta_link = document.getElementById('tabelogLink')
       ta_link.innerHTML = "<a href=\"https://tabelog.com/" + selItem[2] + "\" target=\"_blank\" class=\"link_ta\"><span>tabelog</span></a>"
-      //ツイッターリンク
-      var tw_link = document.getElementById('TweetLink')
-      tw_link.innerHTML = "<a href=\"http://twitter.com/share?url=https://trysail.jp/&text="
-        + selItem[0] + "\" target=\"_blank\" class=\"link_tw\"><span>Tweet</span></a>"
 
       modal.style.display = "block";
 

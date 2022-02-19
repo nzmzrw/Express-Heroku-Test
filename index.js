@@ -80,7 +80,6 @@ function App_Start() {
   if (fs.existsSync(a_filename)) {
     fs.readFile(a_filename, "utf-8", (err, fd) => {
       if (err) {
-        console.log("1");
         throw err;
       }
       Access = fd.toString();

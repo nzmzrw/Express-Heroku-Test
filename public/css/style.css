@@ -2,6 +2,7 @@
 
 body {
   padding-top: 40px;
+  width: calc(100vw - 15px);
   background: rgb(226, 249, 255);
   font-family: "Helvetica Neue",
     Arial,
@@ -16,16 +17,16 @@ body {
 /* ====================================== */
 /*#region*/
 header {
-  width: 100%; /* 幅いっぱいを指定 */
-  height: 50px; /* 高さを50pxに指定 */
-  background: rgb(137, 234, 252); /* 背景色にグレーを指定 */
-  padding: 0px 0; /* ヘッダーに上下左右それぞれ余白を指定 */
-  box-sizing: border-box; /* padding分を含んで幅を100%にするため */
-  position: fixed; /* ウィンドウを基準に画面に固定 */
-  top: 0; /* 上下の固定位置を上から0pxにする */
-  left: 0; /* 左右の固定位置を左から0pxにする */
-  display: flex; /* 中の要素を横並びにする */
-  align-items: center; /* 中の要素を上下中央に並べる */
+  width: calc(100vw - 15px);
+  height: 50px;
+  background: rgb(137, 234, 252);
+  padding: 0px 0; 
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
   border-top: 4px solid rgb(38, 139, 255);
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
   margin: auto;
@@ -238,8 +239,9 @@ header {
   .Mdl_content {
     position: fixed;
     background-color: #ffffff;
-    width: 480px;
-    height: 450px;
+    margin: 0 auto;
+    width: 350px;
+    height: 320px;
     -webkit-animation-name: slideIn;
     -webkit-animation-duration: 0.4s;
     animation-name: slideIn;
@@ -333,18 +335,6 @@ header {
   padding: 15px;
   text-align: center;
  }
-  
- 
-
-  a.link_tw {
-    background: #7fcdf1d0;
-    border-bottom: 2px solid #62a6ff;
-    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
-  }
-  a.link_tw:active {
-    border-bottom: 2px solid #26C6DA;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
-  }
 
   a.link_ta {
     background: #f1c183cb;
