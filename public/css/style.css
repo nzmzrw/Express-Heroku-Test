@@ -306,7 +306,7 @@ header {
 
   .Mdl_title{
     font-weight: bold; 
-    font-size: 24px; 
+    font-size: 18px; 
     margin: 0 10%;
   }
 
@@ -321,24 +321,29 @@ header {
   color: #FFF;
   border-radius: 4px;
   list-style: none;
-  width: 30%;
+  width: 46%;
   padding: 0 1%;
   margin-left: 0.5%;
  }
 
  .Mdl_btn_list a {
   position: relative;
-  display: block;
-  color: #FFF;
+  display: flex;
   border-radius: 8px;
   text-decoration: none;
-  padding: 15px;
+  padding: 5px;
   text-align: center;
+  align-items: center;
+  font-weight: bold;
  }
 
+  .Mdl_btn_list span{
+    margin: 0 auto;
+  }
+
   a.link_ta {
-    background: #f1c183cb;
-    border-bottom: 2px solid #e99f1f;
+    color: #e09500;
+    border: 2px solid #e0950079;
     box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
   }
   a.link_ta:active {
@@ -347,8 +352,8 @@ header {
   }
 
   a.link_ma {
-    background: #f89999cb;
-    border-bottom: 2px solid #df4d28;
+    color: #ff5454;
+    border: 2px solid #ff545479;
     box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
   }
   a.link_ma:active {
