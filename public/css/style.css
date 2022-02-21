@@ -310,9 +310,15 @@ header {
     margin: 0 10%;
   }
 
+  .Mdl_title span{
+    color: rgb(168, 168, 168);
+    font-size: small;
+    font-weight: normal;
+  }
+
   .Mdl_btn_list{
     width: 80%;
-    margin: 10px auto 0;
+    margin: 5px auto 0;
     padding-left: 0;
   }
 
