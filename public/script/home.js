@@ -4,11 +4,11 @@ window.onload = function () {
   modal = document.getElementById("myModal");
 
   //トップバーボタン
-  var host = location.host;
-  alert(host);
-
-  // home = document.getElementById("myModal");
-  // home.innerHTML = 
+  var url = "http://" + location.host;
+  home = document.getElementById("home_btn");
+  home.innerHTML = "<a href=\"" + url + "\"><span>home</span></a>"
+  about = document.getElementById("about_btn");
+  about.innerHTML = "<a href=\"" + url + "/about\"><span>about</span></a>"
 }
 window.onclick = function (event) {
   if (event.target == modal) {
