@@ -5,9 +5,9 @@ window.onload = function () {
 
   //トップバーボタン
   var url = "http://" + location.host;
-  home = document.getElementById("home_btn");
+  var home = document.getElementById("home_btn");
   home.innerHTML = "<a href=\"" + url + "\"><span>home</span></a>"
-  about = document.getElementById("about_btn");
+  var about = document.getElementById("about_btn");
   about.innerHTML = "<a href=\"" + url + "/about\"><span>about</span></a>"
 }
 window.onclick = function (event) {
