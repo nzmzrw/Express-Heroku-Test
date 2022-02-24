@@ -52,12 +52,12 @@ function Show(e) {
   var mapsvg = "<svg role=\"img\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24px\" height=\"32px\" viewBox=\"0 0 24 24\" aria-labelledby=\"exploreIconTitle\" stroke=\"#ff5454\" stroke-width=\"2.25\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" fill=\"none\" color=\"#3232fb\"> <title id=\"exploreIconTitle\">Explore</title> <polygon points=\"14.121 14.121 7.05 16.95 9.879 9.879 16.95 7.05\"/> <circle cx=\"12\" cy=\"12\" r=\"10\"/> </svg>"
   var tabsvg = "<svg role=\"img\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24px\" height=\"32px\" viewBox=\"0 0 24 24\" aria-labelledby=\"newIconTitle\" stroke=\"#e09500\" stroke-width=\"2.25\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" fill=\"none\" color=\"#3232fb\"> <title id=\"newIconTitle\">New</title> <path d=\"M19 14V22H2.99997V4H13\"/> <path d=\"M17.4608 4.03921C18.2418 3.25817 19.5082 3.25816 20.2892 4.03921L20.9608 4.71079C21.7418 5.49184 21.7418 6.75817 20.9608 7.53921L11.5858 16.9142C11.2107 17.2893 10.702 17.5 10.1716 17.5L7.5 17.5L7.5 14.8284C7.5 14.298 7.71071 13.7893 8.08579 13.4142L17.4608 4.03921Z\"/> <path d=\"M16.25 5.25L19.75 8.75\"/> </svg>"
 
-  var title = document.getElementById('dialogTitle')
-  title.innerHTML = selItem[0] + " <span>- " + selItem[1] + "</span>";
+  // var title = document.getElementById('dialogTitle')
+  // title.innerHTML = selItem[0] + " <span>- " + selItem[1] + "</span>";
 
-  //画像
-  var image = document.getElementById('ImagePanel')
-  image.innerHTML = "<img src=\"./image/" + selItem[0] + ".jpg\"></image>"
+  // //画像
+  // var image = document.getElementById('ImagePanel')
+  // image.innerHTML = "<img src=\"./image/" + selItem[0] + ".jpg\"></image>"
 
   //Google Mapリンク
   var ma_link = document.getElementById('mapLink')

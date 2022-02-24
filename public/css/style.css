@@ -184,8 +184,11 @@ header {
   }
 
   .Tbl_td_data span {
-    color: rgb(168, 168, 168);
     font-size: small;
+  }
+
+  .Tbl_td_title span {
+    color: rgb(168, 168, 168);
   }
 
   .Tbl_tr {
@@ -193,17 +196,9 @@ header {
     background: white;
     width: 100%;
   }
-
-  .Tbl_tr:hover {
-    background: rgb(255, 246, 246);
-  }
   
   .Tbl_tr a {
     font-weight: bold;
-  }
-
-  .Tbl_tr:hover a {
-    color: rgb(255, 0, 0);
   }
 
   .Tbl_btn_list{
