@@ -46,9 +46,6 @@
   <table class="Tbl_main" id="mainTable">
     <tbody>
       <% for(let i=0; i < items.length; i++) { %><%- tr_1 + items[i].name + "," + items[i].station + "," + items[i].tabelog + tr_2 %>
-      <td class="Tbl_td_img">
-        <img src="<%= items[i].image %>" />
-      </td>
       <td class="Tbl_td_data">
         <div>
           <a href="javascript:void(0);"><%= items[i].name %></a>
