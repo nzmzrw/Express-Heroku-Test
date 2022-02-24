@@ -179,15 +179,6 @@ header {
     border-spacing: 0px 8px;
   }
 
-  .Tbl_td_img {
-    width: 100px;
-    padding: 0px 10px;
-  }
-
-  .Tbl_td_img img {
-    width: 100%;
-  }
-
   .Tbl_td_data {
     padding-left: 10px;
   }
@@ -198,7 +189,7 @@ header {
   }
 
   .Tbl_tr {
-    height: 100px;
+    height: 80px;
     background: white;
     width: 100%;
   }
@@ -213,6 +204,37 @@ header {
 
   .Tbl_tr:hover a {
     color: rgb(255, 0, 0);
+  }
+
+  .Tbl_btn_list{
+    width: 80%;
+    margin: 5px auto 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+ .Tbl_btn_list li {
+  display: inline-block;
+  color: #FFF;
+  border-radius: 4px;
+  width: 46%;
+  padding: 0 1%;
+  margin-left: 0.5%;
+ }
+
+ .Tbl_btn_list a {
+  position: relative;
+  display: flex;
+  border-radius: 8px;
+  text-decoration: none;
+  padding: 5px;
+  text-align: center;
+  align-items: center;
+  font-weight: bold;
+ }
+
+  .Tbl_btn_list span{
+    margin: 0 auto;
   }
 /*#endregion*/
 
@@ -316,13 +338,13 @@ header {
     font-weight: normal;
   }
 
-  .Mdl_btn_list{
+  /* .Tbl_btn_list{
     width: 80%;
     margin: 5px auto 0;
     padding-left: 0;
   }
 
- .Mdl_btn_list li {
+ .Tbl_btn_list li {
   display: inline-block;
   color: #FFF;
   border-radius: 4px;
@@ -332,7 +354,7 @@ header {
   margin-left: 0.5%;
  }
 
- .Mdl_btn_list a {
+ .Tbl_btn_list a {
   position: relative;
   display: flex;
   border-radius: 8px;
@@ -345,7 +367,7 @@ header {
 
   .Mdl_btn_list span{
     margin: 0 auto;
-  }
+  } */
 
   a.link_ta {
     color: #e09500;

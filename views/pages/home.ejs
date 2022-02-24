@@ -49,9 +49,18 @@
       <td class="Tbl_td_data">
         <div>
           <a href="javascript:void(0);"><%= items[i].name %></a>
-          <span> - <%= items[i].station %></span>
+          <span> - <%= items[i].station %> Posted: <%= items[i].date %></span>
         </div>
-        <div><span>掲載日: <%= items[i].date %></span></div>
+        <div>
+          <ul class="Tbl_btn_list">
+            <li>
+              <div id="mapLink" />
+            </li>
+            <li>
+              <div id="tabelogLink" />
+            </li>
+          </ul>
+        </div>
       </td>
       </tr>
       <% } %>
