@@ -62,7 +62,7 @@ function Show(e) {
   //Google Mapリンク
   var ma_link = document.getElementById('mapLink')
   ma_link.innerHTML = "<a href=\"https://www.google.com/maps/dir/?api=1&destination=" + selItem[1] + "+" + selItem[0] +
-    "\" target=\"_blank\" class=\"link_ma\">" + mapsvg + "<span>MAP</span></a>"
+    "\" target=\"_blank\" class=\"link_ma\">" + mapsvg + "<span>Google map</span></a>"
 
   // 食べログリンク
   var ta_link = document.getElementById('tabelogLink')
