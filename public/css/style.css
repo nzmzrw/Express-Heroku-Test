@@ -30,6 +30,7 @@ header {
   border-top: 4px solid rgb(38, 139, 255);
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
   margin: auto;
+  z-index: 1;
 }
 
 .Top_main {
@@ -228,6 +229,10 @@ header {
   font-weight: bold;
  }
 
+ .Tbl_btn_list a:active {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+ }
+
   .Tbl_btn_list span{
     margin: 0 auto;
   }
@@ -333,54 +338,24 @@ header {
     font-weight: normal;
   }
 
-  /* .Tbl_btn_list{
-    width: 80%;
-    margin: 5px auto 0;
-    padding-left: 0;
-  }
-
- .Tbl_btn_list li {
-  display: inline-block;
-  color: #FFF;
-  border-radius: 4px;
-  list-style: none;
-  width: 46%;
-  padding: 0 1%;
-  margin-left: 0.5%;
- }
-
- .Tbl_btn_list a {
-  position: relative;
-  display: flex;
-  border-radius: 8px;
-  text-decoration: none;
-  padding: 5px;
-  text-align: center;
-  align-items: center;
-  font-weight: bold;
- }
-
-  .Mdl_btn_list span{
-    margin: 0 auto;
-  } */
-
-  a.link_ta {
+  /* a.link_ta {
     color: #e09500;
     border: 2px solid #e0950079;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
   }
-  a.link_ta:active {
-    border-bottom: 2px solid #26C6DA;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
-  }
+
 
   a.link_ma {
     color: #ff5454;
     border: 2px solid #ff545479;
-    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  } */
+
+  a.link_ta {
+    color: #049baf;
+    border: 2px solid #049baf79;
   }
-  a.link_ma:active {
-    border-bottom: 2px solid #26C6DA;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+
+
+  a.link_ma {
+    color: #054daa;
+    border: 2px solid #054daa79;
   }
-  /*#endregion*/
